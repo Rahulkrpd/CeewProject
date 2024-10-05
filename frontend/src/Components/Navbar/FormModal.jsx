@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import "./FormModal.css";
+import { StoreContext } from '../../Context/themeContext';
 
 const FormModal = ({ onClose, onSave }) => {
+    const { url } = useContext(StoreContext)
     const [formData, setFormData] = useState({
         type: 'Non Spatial', // Default selection
         themeName: '',
@@ -24,7 +26,7 @@ const FormModal = ({ onClose, onSave }) => {
     };
 
     const handleSubmit = async () => {
-        // Validation for required fields
+        
         const requiredFields = ['themeName', 'subThemeName', 'title', 'link', 'description', 'keywords', 'resolution', 'source'];
 
         for (const field of requiredFields) {
@@ -34,32 +36,32 @@ const FormModal = ({ onClose, onSave }) => {
             }
         }
 
-        // Set defaults for specific fields if they are empty
+        
         const detailData = {
             title: formData.title,
             link: formData.link,
             Resolution: formData.resolution,
-            granularity: formData.granularity || 'NA', // Set to 'NA' if empty
-            period: formData.period || 'NA', // Set to 'NA' if empty
+            granularity: formData.granularity || 'NA', 
+            period: formData.period || 'NA', 
             source: formData.source,
-            organization: formData.organization || 'null', // Set to 'null' if empty
+            organization: formData.organization || 'null', 
             description: formData.description,
             keywords: formData.keywords.split(',').map(keyword => keyword.trim()),
-            spatialResolution: formData.spatialResolution || 'NA', // Set to 'NA' if empty
+            spatialResolution: formData.spatialResolution || 'NA', 
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/api/add', {
-                type: formData.type, // Selected type
+            const response = await axios.post(`${url}api/add`, {
+                type: formData.type, 
                 themeName: formData.themeName,
                 subThemeName: formData.subThemeName,
                 detailData
             });
 
-            // Show alert message from backend or success message
+            
             alert(response.data.message || 'Data saved successfully!');
-            onSave(); // Optionally refresh or update your data
-            onClose(); // Close the modal after successful save
+            onSave(); 
+            onClose(); 
         } catch (error) {
             alert('Error saving data: ' + (error.response?.data.message || error.message));
         }

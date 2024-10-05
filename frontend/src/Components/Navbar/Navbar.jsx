@@ -17,12 +17,6 @@ const Navbar = ({ onAddButtonClick }) => {
     };
 
 
-
-
-
-
-
-
     const handleAddNew = async (data) => {
         try {
             const response = await fetch(`${url}api/add`, {
@@ -36,7 +30,7 @@ const Navbar = ({ onAddButtonClick }) => {
             if (response.ok) {
 
                 setShowModal(false);
-                onAddButtonClick(); // refresh or update your data here if needed
+                onAddButtonClick(); 
             } else {
                 throw new Error('Failed to add data');
             }
