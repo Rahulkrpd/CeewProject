@@ -1,0 +1,96 @@
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    flex-wrap: wrap; 
+}
+
+.navbar-logo{
+    margin: 5px;
+}
+
+.navbar input {
+    font-size: 10px;
+}
+
+/* Container styling for left and right sections */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Left container for navigation links */
+.navbar-container-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container-left a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar-container-left a:hover {
+    color:#666
+}
+
+/* Right container for the search field */
+.navbar-container-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container-right input {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 8px;
+    max-width: 250px; 
+}
+
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .navbar-container-left {
+        margin-bottom: 16px; 
+    }
+
+    .navbar-container-left a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    .navbar-container-right input {
+        width: 100%; 
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 16px;
+    }
+
+    .navbar-container-left a {
+        margin: 5px;
+        font-size: 14px; 
+    }
+
+    .navbar-container-right input {
+        padding: 6px;
+        font-size: 14px;
+    }
+}
