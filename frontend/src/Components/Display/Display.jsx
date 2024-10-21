@@ -1,20 +1,20 @@
 import "./Display.css";
 import { Link } from "react-router-dom";
 
-const Display = ({ detail, onBack }) => {
+const Display = ({ detail }) => {
     return (
         <div className="display-container">
             <h1>{detail.title}</h1>
             <hr />
             <p><strong>Description:</strong> {detail.description}</p>
 
-           
 
-            
+
+
             <p><strong>Source:</strong> {detail.source}</p>
-            
+
             <p>
-                <strong>Dataset:</strong> 
+                <strong>Dataset:</strong>
                 <a href={detail.link} target="_blank" rel="noopener noreferrer" className="dataset-link">
                     {detail.link}
                 </a>
@@ -27,10 +27,7 @@ const Display = ({ detail, onBack }) => {
             <p><strong>Spatial Resolution:</strong> {detail.spatialResolution}</p>
             <p><strong>Keywords:</strong> {detail.keywords?.join(', ')}</p>
 
-            {/* Back Button */}
-            <button onClick={onBack} className="back-button">
-                Go Back
-            </button>
+            
         </div>
     );
 };

@@ -2,11 +2,12 @@ import { useContext, useState } from 'react';
 import Card from "../Components/Cards/Card";
 import { StoreContext } from "../Context/themeContext";
 import Display from '../Components/Display/Display';
+import { useNavigate } from 'react-router-dom';
 
 const DetailPage = () => {
   const { selectedSubTheme, details, loading, searchValue } = useContext(StoreContext);
   const [selectedDetail, setSelectedDetail] = useState(null);
-
+  const navigate = useNavigate();
 
 
   if (!selectedSubTheme || loading) {
@@ -19,21 +20,25 @@ const DetailPage = () => {
       {selectedDetail ? (
         <Display
           detail={selectedDetail}
-          onBack={() => setSelectedDetail(null)}
+
         />
       ) : (
-        
+
         <div className="card-container">
           {details.filter((item) => item.title.toLowerCase().includes(searchValue)).map((detail) => (
             <Card
               key={detail._id}
               title={detail.title}
               description={`Description: ${detail.description}`}
-              onClick={() => setSelectedDetail(detail)} 
+              onClick={() => setSelectedDetail(detail)}
             />
           ))}
         </div>
       )}
+
+      <div className='back-button-container'>
+        <button onClick={() => navigate('/subthemes')} className="back-button">Go Back</button>
+      </div>
 
 
     </div>

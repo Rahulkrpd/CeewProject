@@ -51,7 +51,7 @@ const FormModal = ({ onClose, onSave }) => {
         };
 
         try {
-            const response = await axios.post(`${url}api/add`, {
+            const response = await axios.post(`${url}/api/add`, {
                 type: formData.type, 
                 themeName: formData.themeName,
                 subThemeName: formData.subThemeName,

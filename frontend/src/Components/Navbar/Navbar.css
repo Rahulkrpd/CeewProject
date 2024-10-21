@@ -1,4 +1,3 @@
-
 .navbar {
     background-color: #333;
     color: #fff;
@@ -7,12 +6,21 @@
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
-.navbar-logo{
-    margin: 5px;
+.navbar-logo {
+    margin: 0 auto;
+
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 5px;
 }
+
+.navbar-logo:hover {
+    color: #666;
+}
+
 
 .navbar input {
     font-size: 10px;
@@ -39,7 +47,7 @@
 }
 
 .navbar-container-left a:hover {
-    color:#666
+    color: #666
 }
 
 /* Right container for the search field */
@@ -54,18 +62,52 @@
     border-radius: 5px;
     border: none;
     margin-right: 8px;
-    max-width: 250px; 
+    max-width: 250px;
 }
+
+
+.filterbtn {
+    display: flex;
+    gap: 10px;
+    width: 200px;
+}
+
+.filterbtn select {
+    width: auto;
+}
+
+.applyfilter {
+    background-color: #7b8896;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.navBtn button {
+    gap: 10px;
+    margin: 10px;
+}
+
+#addnew {
+    background-color: #2db826;
+    color: #fff;
+}
+
+#addnew:hover {
+    background-color: #49b143;
+}
+
 
 
 @media (max-width: 768px) {
     .navbar-container {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
     }
 
     .navbar-container-left {
-        margin-bottom: 16px; 
+        margin-bottom: 16px;
     }
 
     .navbar-container-left a {
@@ -74,7 +116,7 @@
     }
 
     .navbar-container-right input {
-        width: 100%; 
+        width: 100%;
         max-width: 100%;
     }
 }
@@ -86,7 +128,7 @@
 
     .navbar-container-left a {
         margin: 5px;
-        font-size: 14px; 
+        font-size: 14px;
     }
 
     .navbar-container-right input {

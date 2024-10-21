@@ -34,6 +34,12 @@ const SubThemePage = () => {
           onClick={() => handleSubThemeClick(subTheme._id)} // Handle click event
         />
       ))}
+
+
+      <div className='back-button-container'>
+        <button onClick={() => navigate('/')} className="back-button">Go Back</button>
+      </div>
+
     </div>
   );
 };

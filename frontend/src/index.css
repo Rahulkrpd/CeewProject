@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 500;
   font-style: normal;
   
@@ -16,6 +16,21 @@ a {
   text-decoration: none;
 
 }
+.back-button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+}
+
+.back-button-container button{
+  background-color: #7b8896;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
 
 
@@ -24,7 +39,7 @@ a {
 .page-container {
   /* border: 2px solid red; */
   height: 100vh;
-  background: linear-gradient(135deg, #d8d8d8 0%, #a68c91 100%);
+  /* background: linear-gradient(135deg, #d8d8d8 0%, #a68c91 100%); */
   
    background-color: #FFFFFF;
   
