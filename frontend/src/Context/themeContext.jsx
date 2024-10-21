@@ -17,8 +17,11 @@ export const StoreProvider = ({ children }) => {
 
     const [searchValue, setSearchValue] = useState("")
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b4831c6cc97753ae108927bef68a90b7eebb6ed6
     // let url = "http://localhost:5000"
     let url = "https://ceewproject-backend.onrender.com"
 
